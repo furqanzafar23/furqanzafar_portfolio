@@ -92,13 +92,13 @@
         </div>
 
         <div class="card">
-            <h3>Graphic Design</h3>
-            <p>Professional logo, banner and social media designs.</p>
+            <h3>Microsoft Office</h3>
+            <p></p>
         </div>
 
         <div class="card">
-            <h3>SEO Optimization</h3>
-            <p>Improve your website ranking and online visibility.</p>
+            <h3> Adminstrative</h3>
+            <p></p>
         </div>
 
     </div>
