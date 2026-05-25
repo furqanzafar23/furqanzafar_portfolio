@@ -1,218 +1,335 @@
- *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
-        }
-
-        body{
-            margin:0;
-            padding:0;
-            overflow-x:hidden;
-            background:#0f172a;
-            color:white;
-            line-height:1.6;
-        }
-
-        header{
-             width:250px;
-             height:100vh;
-             background:#111827;
-             position:fixed;
-             top:0;
-             left:0;
-             padding:30px 20px;
-             display:flex;
-             align-items:center;
-             z-index:1000;
-             flex-direction: column;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
-        .logo{
-            font-size:28px;
-            font-weight:bold;
-            color:#38bdf8;
-        }
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin-left:20px;
-            transition:0.3s;
-            display: flex;
-            flex-direction:column;
-        }
+/* DESKTOP HEADER / SIDEBAR */
+header{
+    width:250px;
+    height:100vh;
+    background:#111827;
+    position:fixed;
+    top:0;
+    left:0;
+    padding:40px 20px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    z-index:1000;
+    flex-direction: column;
+}
 
-        nav a:hover{
-            color:#38bdf8;
-        }
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
+    text-align: center;
+}
 
-        section{
-            margin-left:250px;
-            padding:80px 10%;
-            position:relative;
-        }
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
 
-        .home{
-            margin-left:150px;
-            min-height:100vh;
-            display:flex;
-             align-items:center;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    text-align: center;
+    font-size: 18px;
+}
 
-        .home-text{
-            flex:1;
-        }
+nav a:hover{
+    color:#38bdf8;
+}
 
-        .home-text h1{
-            font-size:55px;
-        }
+/* MAIN CONTENT SECTIONS */
+section{
+    margin-left:250px; /* Leaves perfect gap for desktop sidebar */
+    padding:80px 8%;
+    position:relative;
+    min-height: 100vh;
+}
 
-        .home-text span{
-            color:#38bdf8;
-        }
+.home{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 40px;
+}
 
-        .home-text p{
-            margin-top:15px;
-            max-width:500px;
-        }
+.home-text{
+    flex:1.2;
+}
 
-        .btn{
-            display:inline-block;
-            margin-top:20px;
-            padding:12px 25px;
-            background:#38bdf8;
-            color:black;
-            text-decoration:none;
-            border-radius:5px;
-            font-weight:bold;
-        }
+.home-text h1{
+    font-size:55px;
+    line-height: 1.2;
+}
 
-        .home-img{
-            flex:1;
-            text-align:center;
-        }
+.home-text span{
+    color:#38bdf8;
+}
 
-        .home-img img{
-            width:300px;
-            border-radius:50%;
-            border:5px solid #38bdf8;
-        }
+.home-text p{
+    margin-top:15px;
+    max-width:500px;
+}
 
-        h2{
-            font-size:40px;
-            margin-bottom:20px;
-            color:#38bdf8;
-        }
-        .about{
-            display:flex;
-            margin-top: 20vh;
-        }
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 28px;
+    background:#38bdf8;
+    color:black;
+    text-decoration:none;
+    border-radius:5px;
+    font-weight:bold;
+    transition: 0.2s ease;
+}
 
-        .services-container,
-        .skills-container{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:2vh;
-            min-height: 50vh;
-        }
+.btn:hover {
+    background: #0ea5e9;
+}
 
-        .card{
-            background:#1e293b;
-            padding:10vh;
-            border-radius:5vh;
-            transition:0.3s;
-        }
+.home-img{
+    flex:0.8;
+    text-align:center;
+    display: flex;
+    justify-content: center;
+}
 
-        .card:hover{
-            transform:translateY(-5px);
-            background:#334155;
-        }
+.home-img img{
+    width:320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
 
-        .contact form{
-            max-width:600px;
-        }
+h2{
+    font-size:40px;
+    margin-bottom:25px;
+    color:#38bdf8;
+}
 
-        .contact input,
-        .contact textarea{
-            width:100%;
-            padding:12px;
-            margin-bottom:15px;
-            border:none;
-            border-radius:5px;
-        }
+/* GRIDS FOR SERVICES & SKILLS */
+.services-container,
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top: 20px;
+}
 
-        .contact button{
-            padding:12px 25px;
-            border:none;
-            background:#38bdf8;
-            color:black;
-            font-weight:bold;
-            border-radius:5px;
-            cursor:pointer;
-        }
-        .social-container {
-              display: flex;
-              gap: 20px; /* Space between buttons */
-        }
+.card{
+    background:#1e293b;
+    padding: 35px 25px;
+    border-radius:12px;
+    transition:0.3s ease;
+}
 
+.card:hover{
+    transform:translateY(-5px);
+    background:#334155;
+}
 
-                                /*   social */
+/* =========================================
+   CONTACT SECTION (CENTERED)
+========================================= */
 
-        .social-icon {
-            display: flex;
-            align-items: center;
-            border-radius: 3vh;
-            padding: 3vh;
-            border: 2px solid #333d42; /* Subdued, muted border color */
-            color: #bf195e; /* Muted silver/grey icon color */
-            text-decoration: none;
-            font-size: 5vh;
-            background: transparent;
-            transition: all 0.3s ease; /* Smooth hover transition */
-        }
-        .social-container{
-            margin-bottom: 0%;
-            margin-top: 55vh;
-            gap: 2vh;
-            margin-left: 3vh;
-        }
-        .social-icon:hover {
-            color: #ffffff; /* Bright white text on hover */
-            border-color: #cf5f22; /* Optional: adds a splash of color, change to #fff for plain white */
-            transform: translateY(-3px); /* Gentle lift effect */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
+/* 1. This parent container controls the centering on the page */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centers the form horizontally */
+    justify-content: center;   /* Centers the form vertically */
+    min-height: 100vh;         /* Takes up full height so it can center properly */
+}
 
-        footer{
-            text-align:center;
-            padding:20px;
-            background:#111827;
-        }
+/* Ensure your section heading stays centered too */
+.contact h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 25px;
+    color: #38bdf8;
+}
 
-        @media(max-width:768px){
+/* 2. Your updated form code with alignment fixes */
+.contact form {
+    width: 100%;               /* Lets it scale down nicely on mobile */
+    max-width: 600px;          /* Prevents it from stretching too wide on desktop */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-            .home{
-                flex-direction:column;
-                text-align:center;
-            }
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    background: #1e293b;
+    color: white;
+    font-size: 16px;
+}
 
-            .home-text h1{
-                font-size:30px;
-            }
+.contact button {
+    padding: 12px 30px;
+    border: none;
+    background: #38bdf8;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;        /* Changed to center so the button aligns with the form layout */
+    transition: 0.2s;
+}
 
-            .home-img img{
-                width:220px;
-                margin-top:30px;
-            }
+.contact button:hover {
+    background: #0ea5e9;
+}
+/* SOCIAL ICONS */
+.socialbody {
+    width: 100%;
+}
 
-            nav{
-                display:flex;
-                flex-wrap:wrap;
-                justify-content:center;
-            }
+.social-container{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
 
-            nav a{
-                margin:10px;
-            }
-        }
+.social-icon {
+    display: flex;
+    align-items: center;      /* Centers icon vertically */
+    justify-content: center;   /* Centers icon horizontally */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #334155; 
+    color: #38bdf8; 
+    text-decoration: none;
+    font-size: 18px;           
+    background: transparent;
+    transition: all 0.3s ease;
+    
+    /* Crucial fix for icon font alignments */
+    line-height: 1;            
+}
+
+.social-icon i {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.social-icon:hover {
+    color: #38bdf8; 
+    border-color: #38bdf8; 
+    transform: translateY(-3px); 
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#111827;
+    margin-left: 250px;
+}
+
+/* =========================================
+   FIXED RESPONSIVE MOBILE VIEW 
+========================================= */
+@media(max-width:768px){
+    
+    /* Turn sidebar header into a normal top header block */
+    header {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 25px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .social-container {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+
+    /* Pull content back to full width */
+    section {
+        margin-left: 0;
+        padding: 60px 20px;
+        width: 100%;
+        min-height: auto;
+    }
+
+    /* Stack text and image cleanly without overlapping */
+    .home {
+        flex-direction: column-reverse; /* Puts text under the image on phones */
+        text-align: center;
+        gap: 35px;
+        padding-top: 20px;
+    }
+
+    .home-text h1 {
+        font-size: 36px;
+    }
+
+    .home-text p {
+        margin: 15px auto 0 auto;
+    }
+
+    .home-img img {
+        width: 240px;
+        height: 240px;
+    }
+
+    h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    #about p {
+        text-align: center;
+    }
+
+    .services-container,
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    footer {
+        margin-left: 0;
+    }
+}
